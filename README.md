@@ -25,7 +25,14 @@ from django.contrib.auth import login
 ```
 
 ### Examples
+Login page: <br />
 ![alt text](/images/login.png)
+Register page: <br />
+![alt text](/images/register.png)
+Task list page with search, add, update, delete methods: <br />
+![alt text](/images/task_list.png)
+
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
