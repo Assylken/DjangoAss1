@@ -26,6 +26,7 @@ from django.contrib.auth import login
 
 ### Examples
 Login page: <br />
+<img src="/images/login.png" width="200" height="200"/>
 ![alt text](/images/login.png)
 Register page: <br />
 ![alt text](/images/register.png)
