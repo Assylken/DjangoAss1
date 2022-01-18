@@ -26,9 +26,9 @@ from django.contrib.auth import login
 
 ### Examples
 Login page: <br />
-<img src="/images/login.png" width="600" height="300"/>
+<img src="/images/login.png" width="600" height="300"/> <br />
 Register page: <br />
-<img src="/images/register.png" width="600" height="300"/>
+<img src="/images/register.png" width="600" height="300"/> <br />
 Task list page with search, add, update, delete methods: <br />
 <img src="/images/task_list.png" width="600" height="300"/>
 
