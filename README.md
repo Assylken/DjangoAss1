@@ -26,12 +26,11 @@ from django.contrib.auth import login
 
 ### Examples
 Login page: <br />
-<img src="/images/login.png" width="200" height="200"/>
-![alt text](/images/login.png)
+<img src="/images/login.png" width="600" height="300"/>
 Register page: <br />
-![alt text](/images/register.png)
+<img src="/images/register.png" width="600" height="300"/>
 Task list page with search, add, update, delete methods: <br />
-![alt text](/images/task_list.png)
+<img src="/images/task_list.png" width="600" height="300"/>
 
 
 
