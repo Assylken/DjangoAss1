@@ -25,6 +25,7 @@ from django.contrib.auth import login
 ```
 
 ### Examples
+![alt text](/images/login.png)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
