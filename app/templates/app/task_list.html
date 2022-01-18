@@ -1,0 +1,54 @@
+{% extends 'app/main_page.html' %}
+{% block content %}
+    <div class="header-bar">
+        <div>
+            <h1 style="margin-left: 18px;"> Welcome {{ request.user|title }}</h1>
+            <h3 style="margin:0; margin-left: 18px"> You have <i>{{ count }} <i style="color: black"> incomplete </i>task{{ count|pluralize:"s" }}
+            </i></h3>
+        </div>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+
+    <div id="search-add-wrapper">
+        <form method="GET" style="margin-top:10px;display:flex;">
+            <input type='text' name='search-area' value="{{ search_input }}">
+            <input class="button" type="submit" value="Search">
+        </form>
+        <a id="add-link" style="margin-top:10px" href="{% url 'task-create' %}"> &#x2b;</a>
+
+    </div>
+
+    <div class="task-items-wrapper">
+        {% for task in tasks %}
+            <div class="task-wrapper">
+                {% if task.complete %}
+                    <div class="task-title">
+                        <div class="task-complete-icon"></div>
+                        <i><s><a href="{% url 'task-update' task.id %}">{{ task }}</a></s></i>
+                    </div>
+                    <a class="delete-link" href="{% url 'task-delete' task.id %}"> &#215; </a>
+                {% else %}
+                    <div class="task-title">
+                        <div class="task-incomplete-icon"></div>
+                        <a href="{% url 'task-update' task.id %}">{{ task }}</a>
+                    </div>
+                    <a class="delete-link" href="{% url 'task-delete' task.id %}"> &#215; </a>
+                {% endif %}
+
+            </div>
+        {% empty %}
+            {% if count == 0 %}
+                <h3 style="padding: 20px; margin-top: -20px; color: darkorange"> Unfortunately you don't have any tasks
+                    yet
+                    <p>{{ search_input }}</p></h3>
+            {% else %}
+                <h3 style="padding: 20px; margin-top: -20px; color: darkorange"> Unfortunately you don't have task
+                    called: <p>{{ search_input }}</p></h3>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
